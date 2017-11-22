@@ -1,12 +1,5 @@
-/vendor
-/.idea
-/.vagrant
-composer.phar
-composer.lock
-Homestead.json
-Homestead.yaml
-.env
-*.map
-/.phpstorm.meta.php
-/_ide_helper.php
-/_ide_helper_models.php
+* text=auto
+*.css linguist-vendored
+*.scss linguist-vendored
+*.js linguist-vendored
+CHANGELOG.md export-ignore

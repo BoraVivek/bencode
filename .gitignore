@@ -1,11 +1,17 @@
 ### Composer ###
 /composer.lock
 /composer.phar
-/vendor/
+/vendor
 
 ### Testing/Build ###
 /build/
 /phpunit.xml
 
-### NetBeans ###
-/nbproject/private/
+### PhpStorm ###
+/.idea
+/.phpstorm.meta.php
+/_ide_helper.php
+/_ide_helper_models.php
+
+.env
+*.map

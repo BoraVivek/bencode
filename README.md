@@ -10,7 +10,6 @@ This library allows developers to encode or decode bencoded data strings in
 Laravel. More information about bencode can be found at [Wikipedia](http://en.wikipedia.org/wiki/Bencode).
 The format is primarily used in the .torrent file specification.
 
-
 ## Install
 
 Via Composer
@@ -18,7 +17,6 @@ Via Composer
 ``` bash
 $ composer require bhutanio/bencode
 ```
-
 
 ## Usage
 
@@ -72,18 +70,16 @@ Array
 )
 ```
 
-
 ## Testing
 
 ``` bash
-$ vendor/bin/phpunit -c phpunit.dist.xml
+$ cp phpunit.xml.dst phpunit.xml
+$ vendor/bin/phpunit -c phpunit.xml
 ```
-
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
 
 [ico-version]: https://img.shields.io/packagist/v/bhutanio/bencode.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
