@@ -7,7 +7,7 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 
 This library allows developers to encode or decode bencoded data strings in
-PHP 5.3+. More information about bencode can be found at [Wikipedia](http://en.wikipedia.org/wiki/Bencode).
+Laravel. More information about bencode can be found at [Wikipedia](http://en.wikipedia.org/wiki/Bencode).
 The format is primarily used in the .torrent file specification.
 
 
@@ -27,7 +27,7 @@ $ composer require rych/bencode
 ```php
 <?php
 
-use Rych\Bencode\Bencode;
+use Bhutanio\Bencode\Bencode;
 
 $data = array(
     "string" => "bar",
@@ -49,7 +49,7 @@ The above produces the string `d5:arrayl3:one3:two5:threee7:integeri42e6:string3
 ```php
 <?php
 
-use Rych\Bencode\Bencode;
+use Bhutanio\Bencode\Bencode;
 
 $string = "d5:arrayl3:one3:two5:threee7:integeri42e6:string3:bare";
 
