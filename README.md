@@ -83,16 +83,16 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/bhutanio/bencode.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/rchouinard/bencode.svg?style=flat-square
-[ico-coveralls]: https://img.shields.io/coveralls/rchouinard/bencode.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/bhutanio/bencode.svg?style=flat-square
+[ico-coveralls]: https://img.shields.io/coveralls/bhutanio/bencode.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/sensiolabs/i/c444c99a-2870-459b-9268-13c96166e8f7.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/bhutanio/bencode.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/bhutanio/bencode
-[link-travis]: https://travis-ci.org/rchouinard/bencode
-[link-coveralls]: https://coveralls.io/r/rchouinard/bencode
+[link-travis]: https://travis-ci.org/bhutanio/bencode
+[link-coveralls]: https://coveralls.io/r/bhutanio/bencode
 [link-code-quality]: https://insight.sensiolabs.com/projects/c444c99a-2870-459b-9268-13c96166e8f7
 [link-downloads]: https://packagist.org/packages/bhutanio/bencode
 [link-author]: https://github.com/rchouinard
-[link-contributors]: https://github.com/rchouinard/bencode/graphs/contributors
+[link-contributors]: https://github.com/bhutanio/bencode/graphs/contributors
 
