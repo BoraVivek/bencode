@@ -1,7 +1,6 @@
 <?php
 
-namespace Bhutanio\Laravel;
-
+namespace Bhutanio\Bencode;
 
 use Bhutanio\Bencode\Bencode;
 use Illuminate\Support\ServiceProvider;
