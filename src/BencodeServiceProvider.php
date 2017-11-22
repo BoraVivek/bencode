@@ -2,7 +2,6 @@
 
 namespace Bhutanio\Bencode;
 
-use Bhutanio\Bencode\Bencode;
 use Illuminate\Support\ServiceProvider;
 
 class BencodeServiceProvider extends ServiceProvider
