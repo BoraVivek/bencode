@@ -27,8 +27,8 @@ class Bencode
     /**
      * Decode a bencode encoded string
      *
-     * @param  string  $string The string to decode.
-     * @param  string  $decodeType Flag used to indicate whether the decoded
+     * @param string $string The string to decode.
+     * @param string $decodeType Flag used to indicate whether the decoded
      *   value should be returned as an object or an array.
      * @return mixed   Returns the appropriate data type for the decoded data.
      */
@@ -38,9 +38,21 @@ class Bencode
     }
 
     /**
+     * Decode a bencode encoded torrent
+     *
+     * @param $string
+     * @return array
+     */
+    public static function decodeTorrent($string)
+    {
+        return Decoder::decodeTorrent($string);
+    }
+
+
+    /**
      * Encode a value into a bencode encoded string
      *
-     * @param  mixed   $value The value to encode.
+     * @param mixed $value The value to encode.
      * @return string  Returns a bencode encoded string.
      */
     public static function encode($value)
