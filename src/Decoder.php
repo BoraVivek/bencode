@@ -53,8 +53,8 @@ class Decoder
     /**
      * Decoder constructor
      *
-     * @param  string  $source The bencode encoded source.
-     * @param  string  $decodeType Flag used to indicate whether the decoded
+     * @param string $source The bencode encoded source.
+     * @param string $decodeType Flag used to indicate whether the decoded
      *   value should be returned as an object or an array.
      * @return void
      */
@@ -62,7 +62,7 @@ class Decoder
     {
         $this->source = $source;
         $this->sourceLength = strlen($this->source);
-        $this->decodeType = in_array($decodeType, array(Bencode::TYPE_ARRAY, Bencode::TYPE_OBJECT))
+        $this->decodeType = in_array($decodeType, [Bencode::TYPE_ARRAY, Bencode::TYPE_OBJECT])
             ? $decodeType
             : Bencode::TYPE_ARRAY;
     }
@@ -70,8 +70,8 @@ class Decoder
     /**
      * Decode a bencode encoded string
      *
-     * @param  string $source The string to decode.
-     * @param  string $decodeType Flag used to indicate whether the decoded
+     * @param string $source The string to decode.
+     * @param string $decodeType Flag used to indicate whether the decoded
      *   value should be returned as an object or an array.
      * @return mixed   Returns the appropriate data type for the decoded data.
      * @throws RuntimeException
@@ -90,6 +90,13 @@ class Decoder
         }
 
         return $decoded;
+    }
+
+    public static function decodeTorrent($source)
+    {
+        $decoder = new self($source, Bencode::TYPE_ARRAY);
+
+        return $decoder->doDecode();
     }
 
     /**
@@ -157,7 +164,7 @@ class Decoder
 
         // One last check to make sure zero-padded integers don't slip by, as
         // they're not allowed per bencode specification.
-        $absoluteValue = (string) abs($value);
+        $absoluteValue = (string)abs($value);
         if (1 < strlen($absoluteValue) && "0" == $value[0]) {
             throw new RuntimeException("Illegal zero-padding found in integer entity at offset $this->offset");
         }
@@ -186,7 +193,7 @@ class Decoder
             throw new RuntimeException("Unterminated string entity at offset $this->offset");
         }
 
-        $contentLength = (int) substr($this->source, $this->offset, $offsetOfColon);
+        $contentLength = (int)substr($this->source, $this->offset, $offsetOfColon);
         if (($contentLength + $offsetOfColon + 1) > $this->sourceLength) {
             throw new RuntimeException("Unexpected end of string entity at offset $this->offset");
         }
@@ -205,7 +212,7 @@ class Decoder
      */
     private function decodeList()
     {
-        $list = array();
+        $list = [];
         $terminated = false;
         $listOffset = $this->offset;
 
@@ -235,7 +242,7 @@ class Decoder
      */
     private function decodeDict()
     {
-        $dict = array();
+        $dict = [];
         $terminated = false;
         $dictOffset = $this->offset;
 
@@ -272,7 +279,7 @@ class Decoder
      *
      * If offset is not provided, the current offset is used.
      *
-     * @param  integer $offset The offset to retrieve from the source string.
+     * @param integer $offset The offset to retrieve from the source string.
      * @return string|false Returns the character found at the specified
      *   offset. If the specified offset is out of range, FALSE is returned.
      */

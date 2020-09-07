@@ -30,7 +30,7 @@ class Encoder
     /**
      * Encoder constructor
      *
-     * @param  mixed   $data The value to encode.
+     * @param mixed $data The value to encode.
      * @return void
      */
     private function __construct($data)
@@ -41,7 +41,7 @@ class Encoder
     /**
      * Encode a value into a bencode encoded string
      *
-     * @param  mixed   $data The value to encode.
+     * @param mixed $data The value to encode.
      * @return string  Returns the bencode encoded string.
      */
     public static function encode($data)
@@ -50,20 +50,18 @@ class Encoder
             if (method_exists($data, "toArray")) {
                 $data = $data->toArray();
             } else {
-                $data = (array) $data;
+                $data = (array)$data;
             }
         }
 
         $encoder = new self($data);
-        $encoded = $encoder->doEncode();
-
-        return $encoded;
+        return $encoder->doEncode();
     }
 
     /**
      * Iterate over values and encode them
      *
-     * @param  mixed   $data The value to encode.
+     * @param mixed $data The value to encode.
      * @return string  Returns the bencode encoded string.
      */
     private function doEncode($data = null)
@@ -85,7 +83,7 @@ class Encoder
     /**
      * Encode an integer
      *
-     * @param  integer $data The integer to be encoded.
+     * @param mixed $data The integer to be encoded.
      * @return string  Returns the bencode encoded integer.
      */
     private function encodeInteger($data = null)
@@ -97,7 +95,7 @@ class Encoder
     /**
      * Encode a string
      *
-     * @param  string  $data The string to be encoded.
+     * @param mixed $data The string to be encoded.
      * @return string  Returns the bencode encoded string.
      */
     private function encodeString($data = null)
@@ -109,7 +107,7 @@ class Encoder
     /**
      * Encode a list
      *
-     * @param  array   $data The list to be encoded.
+     * @param mixed $data The list to be encoded.
      * @return string  Returns the bencode encoded list.
      */
     private function encodeList(array $data = null)
@@ -127,7 +125,7 @@ class Encoder
     /**
      * Encode a dictionary
      *
-     * @param  array   $data The dictionary to be encoded.
+     * @param mixed $data The dictionary to be encoded.
      * @return string  Returns the bencode encoded dictionary.
      */
     private function encodeDict(array $data = null)
