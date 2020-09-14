@@ -39,6 +39,7 @@ class DecoderTest extends TestCase
      */
     public function testUnterminatedStringThrowsException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode("6:stri");
     }
 
@@ -50,6 +51,7 @@ class DecoderTest extends TestCase
      */
     public function testZeroPaddedLengthInStringThrowsException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode("03:foo");
     }
 
@@ -61,6 +63,7 @@ class DecoderTest extends TestCase
      */
     public function testMissingColonInStringThrowsException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode("3foo");
     }
 
@@ -84,6 +87,7 @@ class DecoderTest extends TestCase
      */
     public function testEmptyIntegerThrowsException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode("ie");
     }
 
@@ -95,6 +99,7 @@ class DecoderTest extends TestCase
      */
     public function testNonDigitCharInIntegerThrowsException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode("iae");
     }
 
@@ -106,6 +111,7 @@ class DecoderTest extends TestCase
      */
     public function testLeadingZeroInIntegerThrowsException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode("i042e");
     }
 
@@ -117,6 +123,7 @@ class DecoderTest extends TestCase
      */
     public function testUnterminatedIntegerThrowsException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode("i42");
     }
 
@@ -138,6 +145,7 @@ class DecoderTest extends TestCase
      */
     public function testUnterminatedListThrowsException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode("l3:foo3:bar");
     }
 
@@ -159,6 +167,7 @@ class DecoderTest extends TestCase
      */
     public function testUnterminatedDictThrowsException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode("d3:foo3:bar");
     }
 
@@ -170,6 +179,7 @@ class DecoderTest extends TestCase
      */
     public function testDuplicateDictionaryKeyThrowsException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode("d3:foo3:bar3:foo3:bare");
     }
 
@@ -181,6 +191,7 @@ class DecoderTest extends TestCase
      */
     public function testNonStringDictKeyThrowsException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode("di42e3:bare");
     }
 
@@ -192,6 +203,7 @@ class DecoderTest extends TestCase
      */
     public function testUnknownEntityThrowsException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode("a3:fooe");
     }
 
@@ -203,6 +215,7 @@ class DecoderTest extends TestCase
      */
     public function testDecodeNonStringThrowsException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode(array());
     }
 
@@ -214,6 +227,7 @@ class DecoderTest extends TestCase
      */
     public function testDecodeMultipleTypesOutsideOfListOrDictShouldThrowException()
     {
+        $this->expectException(RuntimeException::class);
         Decoder::decode("3:foo3:bar");
     }
 
