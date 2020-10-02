@@ -1,5 +1,5 @@
 {
-    "name": "bhutanio/bencode",
+    "name": "boravivek/bencode",
     "type": "library",
     "description": "Bencode serializer for Laravel",
     "keywords": ["bencode", "serialize", "laravel"],
